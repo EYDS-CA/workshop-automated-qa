@@ -1,0 +1,11 @@
+name: PR checks
+on:
+  pull_request:
+
+jobs:
+  pr-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Hello World
+        run: echo 'Hello World'

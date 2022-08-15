@@ -1,0 +1,21 @@
+{
+  "name": "automated-qa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github-eyds:EYDS-CA/automated-qa-workshop-will.git",
+  "author": "Will S <will.sonnex@ca.ey.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "wdio run wdio.conf.js"
+  },
+  "dependencies": {
+    "@wdio/cli": "^7.20.9"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^7.20.9",
+    "@wdio/mocha-framework": "^7.20.7",
+    "@wdio/spec-reporter": "^7.20.8",
+    "chromedriver": "^104.0.0",
+    "wdio-chromedriver-service": "^7.3.2"
+  }
+}

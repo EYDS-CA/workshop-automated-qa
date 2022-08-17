@@ -1,0 +1,17 @@
+name: PR checks
+on:
+  pull_request:
+
+jobs:
+  pr-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout Repo
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Run Webdriver Tests
+        run: yarn test

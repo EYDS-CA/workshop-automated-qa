@@ -2,7 +2,9 @@
 
 Nothing beats manual QA, but what can we automate in this process to increase velocity? Participants will be learning how create automated functional and non-functional tests, run automatically through GitHub Actions pipelines. Includes web-driver tests (Selenium), security tests (ZAP), and accessibility tests (pa11y).
 
-Each milestone will be a PR into the branch of the milestone before it. The `main` branch has all milestones so please check the Pull Requests of this repo to see each milestone/lesson separately.
+Learning is broken down into "milestones", and each milestone in this repo will be a PR into the branch of the milestone before it. The `main` branch has all milestones so please check the Pull Requests of this repo to see each milestone/lesson separately. 
+
+You are encouraged to not follow the exact steps we have used here, and to focus just on the high level learning goals, using this repo as an example. 
 
 ### Example real-world codebases
 

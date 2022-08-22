@@ -10,8 +10,5 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout Repo
 
-      - name: Install Dependencies
-        run: yarn install
-
-      - name: Run Webdriver Tests
-        run: yarn test
+      - name: Run WebDriver Tests
+        run: gradle test

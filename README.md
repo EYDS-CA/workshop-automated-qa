@@ -17,13 +17,15 @@ Here are some open-source codebases that our team has worked on which have autom
 ## Milestone 1
 
 ### Goals
--	Set-up a GitHub repo and get a Hello World action or test running on each PR.
--	Implement a very simple e2e test (we are using WebDriver IO to run Selenium in Javascript) running against chosen web-app in pipeline.
+- Set-up a GitHub repo and get a Hello World action or test running on each PR.
+- Implement a very simple e2e test (we are using TestNG to run Selenium in Java) running against chosen web-app in pipeline.
 
 You are encouraged **not to follow the code in this repo exactly**. Please write your own code, expand this code here, or maybe start on some tests for a different web-app.
 
 ### Steps
 - Create a new repo in GitHub for your project.
-- Follow the Getting Started steps at https://webdriver.io/docs/gettingstarted to create some starting tests. (We used `yarn` here.)
-- Check that these tests run locally. We added a `test` script to my `package.json` so we could run `yarn test` and check that they worked.
-- Add a github workflow file (see .github/workflows/pr-check.yml) which will trigger these tests to run on every PR raised or changed.
+- Either download the example code from this repo, or run `gradle init --type java-library --test-framework testng` to get your project set-up.
+- Make sure that `gradle test` runs successfully with the example test. 
+- If you run into untrusted access permissions for `chromedriver` on Mac please run the following command: `xattr -d com.apple.quarantine $(which chromedriver)`
+- Change the test code to include Selenium WebDriver tests, pointing at your chosen web-app to test.
+- Write a simple GitHub Action workflow file, triggered on pull requests, to run your tests. Like the example at .github/workflows/pr-check.yml here.

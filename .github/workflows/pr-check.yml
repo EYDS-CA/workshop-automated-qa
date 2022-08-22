@@ -1,0 +1,14 @@
+name: PR checks
+on:
+  pull_request:
+
+jobs:
+  pr-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout Repo
+
+      - name: Run WebDriver Tests
+        run: gradle test

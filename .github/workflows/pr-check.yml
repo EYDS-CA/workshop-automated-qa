@@ -3,7 +3,8 @@ on:
   pull_request:
 
 jobs:
-  pr-checks:
+  webdriver-tests:
+    name: WebDriver Tests
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -12,3 +13,18 @@ jobs:
 
       - name: Run WebDriver Tests
         run: gradle test
+
+      - name: Generate report PDF
+        # Run even if the tests have failed
+        if: success() || failure()
+        run: |
+          pip install weasyprint==56
+          weasyprint ./build/reports/tests/test/index.html report.pdf
+      
+      - name: Upload report PDF
+        if: success() || failure()
+        uses: machine-learning-apps/pr-comment@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
+        with:
+          path: report.pdf
